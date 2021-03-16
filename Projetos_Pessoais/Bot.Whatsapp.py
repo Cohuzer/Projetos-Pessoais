@@ -35,5 +35,5 @@ def enviar_mensagem(mensagem):
 
 for contato in contatos:
     buscar_contato(contato)
-    for i in quantidade_mensagens:
+    for i in range(0, quantidade_mensagens):
         enviar_mensagem(mensagem)
