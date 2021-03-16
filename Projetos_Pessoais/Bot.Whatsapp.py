@@ -36,5 +36,4 @@ def enviar_mensagem(mensagem):
 
 for contato in contatos:
     buscar_contato(contato)
-    for i in range(200):
-        enviar_mensagem(2 ** i)
+    enviar_mensagem(mensagem)
