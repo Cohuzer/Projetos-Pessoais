@@ -3,7 +3,7 @@ import time
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.keys import Keys
 
-contatos = []#Escreva o nome exato do contato, ou dos contatos, grupo ou grupos, dividos por aspas
+contatos = ['Tiago Def']#Escreva o nome exato do contato, ou dos contatos, grupo ou grupos, dividos por aspas
 quantidade_contatos = len(contatos)
 
 
@@ -13,13 +13,13 @@ quantidade_mensagens = int(input('Quantidade de mensagens enviadas: '))
 
 driver = webdriver.Chrome(ChromeDriverManager().install())
 driver.get('https://web.whatsapp.com/')
-time.sleep(30)
+time.sleep(45)
 #Se quiser aumentar esse tempo, vai do seu processamento
 
 def buscar_contato(contato):
     campo_pesquisa = driver.find_element_by_xpath('//div[contains(@class, "copyable-text selectable-text")]')
     #Ambos os Xpath's servem para encontrar as caixas de busca e mensagem do whatsapp
-    time.sleep(3)
+    time.sleep(5)
     campo_pesquisa.click()
     campo_pesquisa.send_keys(contato)
     campo_pesquisa.send_keys(Keys.ENTER)
