@@ -6,7 +6,7 @@ import urllib
 import urllib.request
 
 print('='*60)
-print('WHATSAPP BOT')
+print(' '*22, 'WHATSAPP BOT')
 print('='*60)
 print('\n By: Mateus CohuzEr')
 
