@@ -9,8 +9,9 @@ quantidade_contatos = int(input('Quantos contatos receberão as mensagens? '))
 for i in range(quantidade_contatos):
     contatos.append(str(input('Insira o nome exato do contato: ')))
 #Nome dos Grupos/Contatos desejados devem estar identicos a no seu Whatsapp
-mensagem = str(input('Insira a mensagem:'))
+mensagem = str(input('Insira a mensagem: '))
 #Você pode trocar esse input por uma str ou até uma proporção matemática 
+quantidade_mensagens = int(input('Vezes que essa mensagem sera enviada: '))
 
 driver = webdriver.Chrome(ChromeDriverManager().install())
 driver.get('https://web.whatsapp.com/')
@@ -36,5 +37,5 @@ def enviar_mensagem(mensagem):
 
 for contato in contatos:
     buscar_contato(contato)
-    for i in range(200):
-        enviar_mensagem(2 ** i)
+    for i in range():
+        enviar_mensagem(mensagem)
