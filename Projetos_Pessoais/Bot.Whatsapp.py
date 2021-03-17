@@ -8,7 +8,7 @@ import urllib.request
 print('='*60)
 print(' '*22, 'WHATSAPP BOT')
 print('='*60)
-print('\n By: Mateus CohuzEr')
+print('\n By: Mateus CohuzEr \n')
 
 
 contatos = []
