@@ -3,7 +3,7 @@ import time
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.keys import Keys
 
-contato = ('Tiago Def')#Escreva o nome exato do contato, ou dos contatos, grupo ou grupos, dividos por aspas
+contato = ('')#Escreva o nome exato do contato, ou dos contatos, grupo ou grupos, dividos por aspas
 quantidade_contatos = 1
 
 
