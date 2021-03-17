@@ -7,16 +7,16 @@ contatos = []
 
 quantidade_contatos = int(input('Quantos contatos receberão as mensagens? '))
 for i in range(quantidade_contatos):
-    contatos.append(str(input('Insira o nome exato do contato: ')))
-#Nome dos Grupos/Contatos desejados devem estar identicos a no seu Whatsapp
+    contatos.append(str(input('Insira o nome exato do(s) contato(s): ')))
+
 mensagem = str(input('Insira a mensagem: '))
 #Você pode trocar esse input por uma str ou até uma proporção matemática 
 quantidade_mensagens = int(input('Vezes que essa mensagem sera enviada: '))
 
 driver = webdriver.Chrome(ChromeDriverManager().install())
 driver.get('https://web.whatsapp.com/')
-time.sleep(30)
-#Se quiser aumentar esse tempo, vai do seu processamento
+time.sleep(20)
+#Se quiser aumentar/diminuir esse tempo, vai do seu processamento
 
 def buscar_contato(contato):
     campo_pesquisa = driver.find_element_by_xpath('//div[contains(@class, "copyable-text selectable-text")]')
@@ -31,11 +31,11 @@ def enviar_mensagem(mensagem):
     #Pelo dois Xpath's terem o mesmo titulo você os coloca numa lista e busca o desejado, no primeiro caso queremos o primeiro campo que aparece na busca, porém nesse queremos o segundo
     # campo_mensagem[0] == Buscar contatos ; campo_mensagem[1] == escrever a mensagem
     campo_mensagem[1].click()
-    time.sleep(3)
+    time.sleep(1)
     campo_mensagem[1].send_keys(mensagem)
     campo_mensagem[1].send_keys(Keys.ENTER)
 
 for contato in contatos:
     buscar_contato(contato)
-    for i in range():
+    for i in range(0, quantidade_mensagens):
         enviar_mensagem(mensagem)
