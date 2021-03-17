@@ -15,7 +15,7 @@ quantidade_mensagens = int(input('Vezes que essa mensagem sera enviada: '))
 
 driver = webdriver.Chrome(ChromeDriverManager().install())
 driver.get('https://web.whatsapp.com/')
-time.sleep(20)
+time.sleep(15)
 #Se quiser aumentar/diminuir esse tempo, vai do seu processamento
 
 def buscar_contato(contato):
