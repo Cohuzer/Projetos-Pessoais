@@ -3,8 +3,8 @@ import time
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.keys import Keys
 
-contato = ()#Escreva o nome exato do contato, ou dos contatos, grupo ou grupos, dividos por aspas
-quantidade_contatos = len(contatos)
+contato = ('Tiago Def')#Escreva o nome exato do contato, ou dos contatos, grupo ou grupos, dividos por aspas
+quantidade_contatos = 1
 
 
 mensagem = str(input('Insira a mensagem:'))
@@ -33,7 +33,6 @@ def enviar_mensagem(mensagem):
     campo_mensagem[1].send_keys(mensagem)
     campo_mensagem[1].send_keys(Keys.ENTER)
 
-for contato in contatos:
-    buscar_contato(contato)
-    for i in range(0, quantidade_mensagens):
-        enviar_mensagem(mensagem)
+buscar_contato(contato)
+for i in range(0, quantidade_mensagens):
+    enviar_mensagem(mensagem)
