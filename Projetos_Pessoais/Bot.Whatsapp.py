@@ -4,6 +4,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.keys import Keys
 
 contatos = []
+#Declaração de variavel, evita mudar essa parte
 
 quantidade_contatos = int(input('Quantos contatos receberão as mensagens? '))
 for i in range(quantidade_contatos):
