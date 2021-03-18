@@ -12,7 +12,6 @@ print('\n By: Mateus CohuzEr \n')
 
 contatos = []
 
-
 def leiaInt(entrada):
     while True:
         try:
@@ -28,7 +27,6 @@ def leiaInt(entrada):
             break
 
     return int(n)
-
 
 #Declaração de variaveis, favor evitar mudar essa parte
 
