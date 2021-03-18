@@ -76,7 +76,6 @@ else:
         campo_mensagem[1].send_keys(Keys.ENTER)
 
 #Executavel do Programa:
-
 for contato in contatos:
     buscar_contato(contato)
     for i in range(0, quantidade_mensagens):
