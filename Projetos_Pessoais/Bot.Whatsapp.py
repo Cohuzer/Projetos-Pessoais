@@ -22,7 +22,7 @@ quantidade_mensagens = int(input('Vezes que essa mensagem sera enviada: '))
 
 driver = webdriver.Chrome(ChromeDriverManager().install())
 
-#Whatsapp Check e executação do código
+#Whatsapp Check e execução do código
 try:
     site = urllib.request.urlopen('https://web.whatsapp.com/')
 except urllib.error.URLError:
@@ -32,10 +32,10 @@ else:
     time.sleep(15)
     #Se quiser aumentar/diminuir esse tempo, vai do seu processamento
     
-    #Declaracao de variavel dentro de um escopo do codigo
+    #Declaração de variavel dentro de um escopo do codigo
     def buscar_contato(contato):
         campo_pesquisa = driver.find_element_by_xpath('//div[contains(@class, "copyable-text selectable-text")]')
-        #Ambos os Xpaths servem para encontrar as caixas de busca e mensagem do whatsapp
+        #Ambos os Xpath's servem para encontrar as caixas de busca e mensagem do whatsapp
         time.sleep(3)
         campo_pesquisa.click()
         campo_pesquisa.send_keys(contato)
@@ -43,7 +43,7 @@ else:
 
 def enviar_mensagem(mensagem):
     campo_mensagem = driver.find_elements_by_xpath('//div[contains(@class, "copyable-text selectable-text")]')
-    #Pelo dois Xpaths terem o mesmo titulo você os coloca numa lista e busca o desejado, no primeiro caso queremos o primeiro campo que aparece na busca, porém nesse queremos o segundo
+    #Pelo dois Xpath's terem o mesmo titulo você os coloca numa lista e busca o desejado, no primeiro caso queremos o primeiro campo que aparece na busca, porém nesse queremos o segundo
     # campo_mensagem[0] == Buscar contatos ; campo_mensagem[1] == escrever a mensagem
     campo_mensagem[1].click()
     time.sleep(1)
