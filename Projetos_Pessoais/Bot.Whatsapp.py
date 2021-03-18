@@ -11,6 +11,8 @@ print('='*60)
 print('\n By: Mateus CohuzEr \n')
 
 contatos = []
+mensagem = 'Oi'
+quantidade_mensagens = 1
 
 def leiaInt(entrada):
     while True:
@@ -38,9 +40,11 @@ for i in range(quantidade_contatos):
     contatos.append(str(input('Insira o nome exato do(s) contato(s): ')))
 
 
-def construindo_mensagem(mensagem=str('Oi'), quantidade_mensagens=int(1)):
+def construindo_mensagem():
+    global mensagem
+    global quantidade_mensagens
     mensagem = str(input('Insira a mensagem: '))
-    quantidade_mensagens = int(input('Vezes que essa mensagem sera enviada: '))
+    quantidade_mensagens = LeiaInt('Vezes que essa mensagem sera enviada: ')
 
 driver = webdriver.Chrome(ChromeDriverManager().install())
 
@@ -74,7 +78,7 @@ else:
 
 #Executavel do Programa:
 
-construindo_mensagem(mensagem, quantidade_mensagens)
+construindo_mensagem()
 
 for contato in contatos:
     buscar_contato(contato)
