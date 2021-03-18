@@ -32,13 +32,10 @@ def leiaInt(entrada):
 
 #Declaração de variaveis, favor evitar mudar essa parte
 
-
 quantidade_contatos = leiaInt('Quantos contatos receberão as mensagens? ')
-
 
 for i in range(quantidade_contatos):
     contatos.append(str(input('Insira o nome exato do(s) contato(s): ')))
-
 
 def construindo_mensagem():
     global mensagem
