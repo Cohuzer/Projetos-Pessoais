@@ -17,8 +17,9 @@ quantidade_contatos = int(input('Quantos contatos receberão as mensagens? '))
 for i in range(quantidade_contatos):
     contatos.append(str(input('Insira o nome exato do(s) contato(s): ')))
 
-mensagem = str(input('Insira a mensagem: '))
-quantidade_mensagens = int(input('Vezes que essa mensagem sera enviada: '))
+def construindo_mensagem(mensagem=str(''), quantidade_mensagens=int(1)):
+    mensagem = str(input('Insira a mensagem: '))
+    quantidade_mensagens = int(input('Vezes que essa mensagem sera enviada: '))
 
 driver = webdriver.Chrome(ChromeDriverManager().install())
 
@@ -51,6 +52,8 @@ else:
         campo_mensagem[1].send_keys(Keys.ENTER)
 
 #Executavel do Programa:
+
+construindo_mensagem(mensagem, quantidade_mensagens)
 
 for contato in contatos:
     buscar_contato(contato)
