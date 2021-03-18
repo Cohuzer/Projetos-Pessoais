@@ -41,15 +41,14 @@ else:
         campo_pesquisa.send_keys(contato)
         campo_pesquisa.send_keys(Keys.ENTER)
 
-def enviar_mensagem(mensagem):
-    campo_mensagem = driver.find_elements_by_xpath('//div[contains(@class, "copyable-text selectable-text")]')
-    #Pelo dois Xpath's terem o mesmo titulo você os coloca numa lista e busca o desejado, no primeiro caso queremos o primeiro campo que aparece na busca, porém nesse queremos o segundo
-    # campo_mensagem[0] == Buscar contatos ; campo_mensagem[1] == escrever a mensagem
-    campo_mensagem[1].click()
-    time.sleep(1)
-    campo_mensagem[1].send_keys(mensagem)
-    campo_mensagem[1].send_keys(Keys.ENTER)
-    #End
+    def enviar_mensagem(mensagem):
+        campo_mensagem = driver.find_elements_by_xpath('//div[contains(@class, "copyable-text selectable-text")]')
+        #Pelo dois Xpath's terem o mesmo titulo você os coloca numa lista e busca o desejado, no primeiro caso queremos o primeiro campo que aparece na busca, porém nesse queremos o segundo
+        # campo_mensagem[0] == Buscar contatos ; campo_mensagem[1] == escrever a mensagem
+        campo_mensagem[1].click()
+        time.sleep(1)
+        campo_mensagem[1].send_keys(mensagem)
+        campo_mensagem[1].send_keys(Keys.ENTER)
 
     for contato in contatos:
         buscar_contato(contato)
