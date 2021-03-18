@@ -46,6 +46,8 @@ def construindo_mensagem():
     mensagem = str(input('Insira a mensagem: '))
     quantidade_mensagens = LeiaInt('Vezes que essa mensagem sera enviada: ')
 
+construindo_mensagem()
+
 driver = webdriver.Chrome(ChromeDriverManager().install())
 
 #Whatsapp Check e execução do código
@@ -77,8 +79,6 @@ else:
         campo_mensagem[1].send_keys(Keys.ENTER)
 
 #Executavel do Programa:
-
-construindo_mensagem()
 
 for contato in contatos:
     buscar_contato(contato)
