@@ -44,7 +44,7 @@ def construindo_mensagem():
     global mensagem
     global quantidade_mensagens
     mensagem = str(input('Insira a mensagem: '))
-    quantidade_mensagens = LeiaInt('Vezes que essa mensagem sera enviada: ')
+    quantidade_mensagens = leiaInt('Vezes que essa mensagem sera enviada: ')
 
 construindo_mensagem()
 
