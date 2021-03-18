@@ -11,10 +11,31 @@ print('='*60)
 print('\n By: Mateus CohuzEr \n')
 
 contatos = []
+
+
+def leiaInt(entrada):
+    while True:
+        try:
+            n = int(input(entrada))
+        except (ValueError):
+            print('\033[31mVALOR INVALIDO! Digite um valor valido\033[m')
+        except(TypeError):
+            print(f'\033[31mVALOR INVALIDO! Informe um número valido!\033[m')
+        except(KeyboardInterrupt):
+            print(f'O usuario preferiu não informar esse número!')
+            return 0
+        else:
+            break
+
+    return int(n)
+
+
 #Declaração de variaveis, favor evitar mudar essa parte
 
 
-quantidade_contatos = int(input('Quantos contatos receberão as mensagens? '))
+quantidade_contatos = leiaInt('Quantos contatos receberão as mensagens? ')
+
+
 for i in range(quantidade_contatos):
     contatos.append(str(input('Insira o nome exato do(s) contato(s): ')))
 
