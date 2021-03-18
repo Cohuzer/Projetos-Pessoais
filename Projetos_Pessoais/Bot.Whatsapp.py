@@ -29,7 +29,7 @@ except urllib.error.URLError:
     print('\033[31mWHATSAPP INDISPONIVEL\033[m')
 else:
     driver.get('https://web.whatsapp.com/')
-    time.sleep(15)
+    time.sleep(20)
     #Se quiser aumentar/diminuir esse tempo, vai do seu processamento
     
     #Declaração de variavel dentro de um escopo do codigo
