@@ -4,7 +4,8 @@ for k in range(0, entrada1):
     reverso = -1
     entrada = str(input(f'{k}- Frase: '))
     entrada = entrada.replace(' ', '')
-    entrada = entrada.replace('.', '')
+    entrada = entrada.replace('"', '')
+    entrada = entrada.replace("'", '')
     entrada = entrada.upper()
 
     for i in range(0, len(entrada)):
