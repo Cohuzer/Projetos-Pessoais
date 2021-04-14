@@ -3,7 +3,7 @@ reverso = -1
 entrada = str(input('Insira a frase a ser boomerangada: '))
 entrada = entrada.upper()
 
-for i in range len(entrada):
+for i in range(0, len(entrada)):
     print(f'{entrada[normal]}{entrada[reverso]}')
     if normal < len(entrada):
         normal += 1
