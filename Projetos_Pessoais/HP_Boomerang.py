@@ -1,6 +1,7 @@
 normal = 0
 reverso = -1
 entrada = str(input('Insira a frase a ser boomerangada: '))
+entrada = entrada.replace(' ', '')
 entrada = entrada.upper()
 
 for i in range(0, len(entrada)):
