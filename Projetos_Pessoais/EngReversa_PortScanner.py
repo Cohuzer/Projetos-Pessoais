@@ -41,3 +41,5 @@ except socket.gaierror:
 except socket.error: 
         print("\ Server not responding !!!!") 
         sys.exit()
+finally:
+    print('FIM DO SCAN')
