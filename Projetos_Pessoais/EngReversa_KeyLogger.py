@@ -1,4 +1,3 @@
-#NET COPY
 import logging
 import os
 import platform
