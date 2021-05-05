@@ -1,12 +1,10 @@
-import pyfiglet 
 import sys 
 import socket 
 from datetime import datetime
 
-target = 'bancocn.com'
+target = 'youtube.com'
 
-ascii_banner = pyfiglet.figlet_format("PORT SCANNER") 
-print(ascii_banner) 
+print('PortScanner') 
 
 # Defining a target 
 if len(sys.argv) == 2: 
