@@ -2,7 +2,7 @@ import sys
 import socket 
 from datetime import datetime
 
-target = 'youtube.com'
+target = 'google.com'
 
 print('PortScanner') 
 
