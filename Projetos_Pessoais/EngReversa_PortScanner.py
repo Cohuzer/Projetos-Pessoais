@@ -2,7 +2,7 @@ import sys
 import socket 
 from datetime import datetime
 
-target = 'google.com'
+target = '127.0.0.1'
 
 print('PortScanner') 
 
@@ -21,7 +21,7 @@ print("-" * 50)
    
 try: 
       
-    # will scan ports between 1 to 65,535 
+    # will scan ports between 1 to 65,535
     for port in range(1,65535): 
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) 
         socket.setdefaulttimeout(1) 
