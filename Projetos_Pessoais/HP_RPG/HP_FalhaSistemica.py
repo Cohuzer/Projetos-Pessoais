@@ -67,13 +67,13 @@ def falha(frase):
     for i in range(1, len(retorno)):
         tamanho_retorno -= 1
         retorno.append(retorno[tamanho_retorno])
-    retorno.append(retorno[0])
 
     return retorno
 
 
 #ENTRADA
 entrada1 = int(input('Quantidade de frases a serem manipuladas: '))
+print('\n\033[31mO PROGRAMA APENAS FUNCIONA PARA FRASES COM MAIS DE 4 CARACTERES!\033[m\n')
 
 for i in range(entrada1):
     frase = input('Frase: ')
