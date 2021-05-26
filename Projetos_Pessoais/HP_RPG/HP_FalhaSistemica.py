@@ -63,7 +63,7 @@ def falha(frase):
         frase = trocaVoltando(frase[-controle], letra_controle_inverso, frase)
         controle += 1
 
-    tamanho_retorno = len(retorno)
+    tamanho_retorno = len(retorno)-1
     for i in range(1, len(retorno)):
         tamanho_retorno -= 1
         retorno.append(retorno[tamanho_retorno])
