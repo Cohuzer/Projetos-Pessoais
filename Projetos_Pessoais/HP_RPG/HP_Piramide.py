@@ -1,5 +1,4 @@
 #Piramide
-
 def f1(entrada):
     for i in range(0, len(entrada)):
         try:
@@ -7,6 +6,7 @@ def f1(entrada):
                 print(f'{entrada[0:i + 1]}')
         except IndexError:
                 print(f'{entrada}')
+
 
 def f2(entrada):
     for c in range(0, len(entrada)):
@@ -16,7 +16,9 @@ def f2(entrada):
         except IndexError:
             print(f'{entrada[0]}')
 
-for posi in range(1):
+
+entrada = int(input('Quantidade de frases a serem alteradas: '))
+for posi in range(entrada):
     print(f'\033[1;33mPiramide {posi + 1}:\033[m')
 
     entrada = str(input('Frase: ')).strip()
