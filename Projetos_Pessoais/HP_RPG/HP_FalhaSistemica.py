@@ -76,7 +76,7 @@ entrada1 = int(input('Quantidade de frases a serem manipuladas: '))
 print('\n\033[31mO PROGRAMA APENAS FUNCIONA PARA FRASES COM MAIS DE 4 CARACTERES!\033[m\n')
 
 for i in range(entrada1):
-    frase = input('Frase: ')
+    frase = input('Frase: ').strip()
     print(f'{i+1}° Frase-\n')
     frase = concatenar(frase)
     falha_respondido = falha(frase)
