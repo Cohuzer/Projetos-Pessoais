@@ -7,6 +7,7 @@ def T9(frase_T9):
     frase_T9 = frase_T9.replace('â', '2')
     frase_T9 = frase_T9.replace('b', '2')
     frase_T9 = frase_T9.replace('c', '2')
+    frase_T9 = frase_T9.replace('ç', '2')
     frase_T9 = frase_T9.replace('d', '3')
     frase_T9 = frase_T9.replace('e', '3')
     frase_T9 = frase_T9.replace('ê', '3')
