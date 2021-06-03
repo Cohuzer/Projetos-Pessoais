@@ -1,4 +1,4 @@
-entrada = input('Frase a ser manipulada: ')
+entrada = input('Frase a ser manipulada: ').strip()
 entrada = entrada.upper()
 print('Frase-')
 
