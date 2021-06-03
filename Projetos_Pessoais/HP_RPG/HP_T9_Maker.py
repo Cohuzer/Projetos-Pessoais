@@ -30,5 +30,5 @@ def T9(entrada):
 
 x = int(input('Frases a serem alteradas: '))
 for i in range(x):
-    entrada = input('Frase a ser alterada: ')
+    entrada = input('Frase a ser alterada: ').lower()
     print(f'{i+1}°-> {T9(entrada)}')
