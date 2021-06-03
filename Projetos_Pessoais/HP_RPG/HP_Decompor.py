@@ -1,0 +1,6 @@
+x = int(input('Quantidade de frases a serem catalogadas: '))
+for k in range(x):
+    entrada = input('Frase a ser manipulada: ')
+    print(f'{k}°->')
+    for j in range(len(entrada), 0, -1):
+        print(f'{entrada[0:j]}')

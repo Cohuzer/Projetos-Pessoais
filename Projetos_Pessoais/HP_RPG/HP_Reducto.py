@@ -5,4 +5,5 @@ print('Frase-')
 
 print(entrada)
 for i in range(len(entrada)):
-    print(f'{entrada[0:-i]}{entrada[-i:-1].lower()}')
+    for j in range(len(entrada), 0, -1):
+        print(f'{entrada[0:j].upper()}')
