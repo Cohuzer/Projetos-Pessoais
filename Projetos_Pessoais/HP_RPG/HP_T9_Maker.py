@@ -1,5 +1,5 @@
 def T9(frase_T9):
-    global i
+    global lista
     frase_T9 = frase_T9.replace('a', '2')
     frase_T9 = frase_T9.replace('á', '2')
     frase_T9 = frase_T9.replace('à', '2')
@@ -45,10 +45,13 @@ def T9(frase_T9):
     frase_T9 = frase_T9.replace('x', '9')
     frase_T9 = frase_T9.replace('y', '9')
     frase_T9 = frase_T9.replace('z', '9')
-    print(f'{i + 1}°-> {frase_T9}')
+    lista.append(frase_T9)
 
 
+lista = []
 x = int(input('Frases a serem alteradas: '))
 for i in range(x):
-    entrada = input('Frase a ser alterada: ').lower()
+    entrada = input('Frase: ').lower()
     T9(entrada)
+for j in range(len(lista)):
+    print(f'{j+1}°->\n{lista[j]}')
