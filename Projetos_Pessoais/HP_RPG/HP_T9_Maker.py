@@ -53,5 +53,6 @@ x = int(input('Frases a serem alteradas: '))
 for i in range(x):
     entrada = input('Frase: ').lower()
     T9(entrada)
+print('<-T9->')
 for j in range(len(lista)):
     print(f'{j+1}°->\n{lista[j]}')
