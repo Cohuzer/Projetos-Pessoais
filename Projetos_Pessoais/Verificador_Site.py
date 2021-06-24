@@ -19,4 +19,4 @@ while True:
         print(f'\033[32mSITE DISPONIVEL\033[m')
         break
 
-print('\033[1:31mFim da execução do programa\033[m')
+print('\033[1:34m --> Fim da execução do programa\033[m')
