@@ -8,7 +8,7 @@ print('   >>Digite \033[1:31m\exit\033[m para sair \n')
 
 target = input('\033[34mTarget site: \033[m')  # Link do site
 
-while True:
+for i in range(0, 100):  # Limitador
     try:
         check_output(f"ping {target}", shell=True)
     except:
