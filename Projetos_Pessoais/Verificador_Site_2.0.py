@@ -13,9 +13,9 @@ while True:
         check_output(f"ping {target}", shell=True)
     except:
         print('\033[31mSITE INDISPONIVEL\033[m')
-        sleep(5)
+        sleep(10)
     else:
-        print(f'\033[32mSITE DISPONIVEL\033[m')
+        print(f'\033[1;32mSITE DISPONIVEL\033[m')
         break
 
 print('\033[1:34m --> Fim da execução do programa\033[m')
