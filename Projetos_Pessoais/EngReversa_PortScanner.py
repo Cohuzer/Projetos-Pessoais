@@ -2,7 +2,7 @@ import sys
 import socket 
 from datetime import datetime
 
-target = '127.0.0.1'
+target = 'google.com'
 
 print('PortScanner') 
 
