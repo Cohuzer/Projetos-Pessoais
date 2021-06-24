@@ -12,7 +12,7 @@ entrada = input('\033[34mTarget site: \033[m') #Link do site
 while True:
     try:
         site = urllib.request.urlopen(entrada)
-    except urllib.error.URLError:
+    except urllib.error.URLError or urllib.error.HTTPError:
         print('\033[31mSITE INDISPONIVEL\033[m')
         sleep(10)
     else:
