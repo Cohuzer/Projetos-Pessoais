@@ -23,7 +23,7 @@ def leiaInt(entrada):
         except(TypeError):
             print(f'\033[31mVALOR INVALIDO! Informe um número valido!\033[m')
         except(KeyboardInterrupt):
-            print(f'O usuario preferiu não informar esse número!')
+            print(f'O usuário preferiu não informar esse número!')
             return 0
         else:
             break
