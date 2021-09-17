@@ -10,10 +10,10 @@ def lerList(mensagem):
     lista = []
     c = 0
     while (True):
-        escopo = str(input(mensagem + ": "))
+        escopo = str(input("\n" + mensagem + ": "))
         lista.append(escopo)
         c += 1
-        escopo_boll = str(input("Digite 0 para encerrar o programa: "))
+        escopo_boll = str(input("Digite 0 se já inseriu todos os contatos desejados: "))
         if escopo_boll == "0":
             break
     return lista
@@ -22,26 +22,18 @@ def lerList(mensagem):
 def lerZeroUm(mensagem):
     retorno = str
     while (True):
-        try:
-            retorno = str(input(mensagem))
-            if retorno in "01":
-                break
-        except (ValueError):
-            print('\033[31mVALOR INVALIDO! Digite um valor valido\033[m')
-        except(TypeError):
-            print(f'\033[31mVALOR INVALIDO! Informe um número valido!\033[m')
-        except(KeyboardInterrupt):
-            print(f'O usuário preferiu não informar esse número!')
+        retorno = str(input(mensagem))
+        if retorno in "01":
+            break
     return retorno
 
 
 print('='*60)
 print(' '*20, 'WHATSAPP BOT 2')
 print('='*60)
-print('\n By: Mateus CohuzEr \n')
+print('\n ~> By: Mateus CohuzEr')
 
 mensagem = str
-turner_sticker = lerZeroUm("Digite:\n0-Mensagem de Texto\n1-Figurinha\n>>")
-quantidade_mensagens = int
+turner_sticker = lerZeroUm("\nDigite para:\n0-Mensagem de Texto\n1-Figurinha\n>> ")
 contatos = lerList("Insira o nome exato do contato ou grupo desejado")
-
+quantidade_mensagens = int(len(contatos))

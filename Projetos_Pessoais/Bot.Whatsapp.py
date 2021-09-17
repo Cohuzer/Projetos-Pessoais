@@ -30,8 +30,6 @@ def leiaInt(entrada):
 
     return int(n)
 
-#Declaração de variaveis, favor evitar mudar essa parte
-
 quantidade_contatos = leiaInt('Quantos contatos receberão as mensagens? ')
 
 for i in range(quantidade_contatos):
