@@ -6,8 +6,9 @@ import urllib
 import urllib.request
 
 #Definição das funções
-def construtorMensagem(turner, mensagem):
-    if turner == "0":
+def construtorMensagem(tuner, mensagem):
+    retorno = "Error"
+    if tuner == "0":
         retorno = str(input(mensagem))
     return retorno
 
@@ -35,20 +36,19 @@ def lerZeroUm(mensagem):
 
 
 def inicializadorWebdriver():
-    driver = webdriver.Chrome(ChromeDriverManager().install())
     try:
-        site = urllib.request.urlopen('https://web.whatsapp.com/')
+        urllib.request.urlopen('https://web.whatsapp.com/')
     except urllib.error.URLError:
         print('\033[31mWHATSAPP INDISPONIVEL\033[m')
     else:
         driver.get('https://web.whatsapp.com/')
-        time.sleep(20)
+        time.sleep(10)
 
 
 def buscarContato(contato):
         campo_pesquisa = driver.find_element_by_xpath('//div[contains(@class, "copyable-text selectable-text")]')
         #Ambos os Xpath's servem para encontrar as caixas de busca e mensagem do whatsapp
-        time.sleep(3)
+        time.sleep(1.5)
         campo_pesquisa.click()
         campo_pesquisa.send_keys(contato)
         campo_pesquisa.send_keys(Keys.ENTER)
@@ -58,13 +58,24 @@ def enviarMensagem(mensagem):
     campo_mensagem = driver.find_elements_by_xpath('//div[contains(@class, "copyable-text selectable-text")]')
     #campo_mensagem[0] == Buscar contatos; campo_mensagem[1] == escrever a mensagem
     campo_mensagem[1].click()
-    time.sleep(1)
+    time.sleep(0.5)
     campo_mensagem[1].send_keys(mensagem)
     campo_mensagem[1].send_keys(Keys.ENTER)
 
+def encontraFigurinhas():
+    campo_emoji = driver.find_element_by_xpath('//div[contains(@class, "_1uqmP _3agz_")]')
+    campo_emoji.click()
+    time.sleep(0.2)
+    campo_sticker = driver.find_element_by_xpath('//button[contains(@class, "_23sAs _3V3JJ _1Eec4 _1owZM")]')
+    campo_sticker.click()
+    time.sleep(0.2)
+
 
 def enviarFigurinha():
-    pass
+    campo_stickers = driver.find_elements_by_xpath('//div[contains(@class, "_2elZc")]')
+    campo_stickers[0].click()
+    time.sleep(0.2)
+
 
 #Código Principal
 print('='*60)
@@ -73,16 +84,23 @@ print('='*60)
 print('\n ~> By: Mateus CohuzEr')
 
 # Entrada
-turner = lerZeroUm("\nDigite para:\n0-Mensagem de Texto\n1-Figurinha\n>> ") # 1-Manda a figurinha em primeiro lugar nas enviadas recentemente
-mensagem = construtorMensagem("0", "Insira a mensagem desejada: ")
+tuner = lerZeroUm("\nDigite para:\n0-Mensagem de Texto\n1-Figurinha\n>> ") # 1-Manda a figurinha em primeiro lugar nas enviadas recentemente
+mensagem = construtorMensagem(tuner, "\nInsira a mensagem desejada: ")
 contatos = lerList("Insira o nome exato do contato ou grupo desejado")
-quantidade_mensagens = int(input("Insira quantas mensagens serão enviadas: "))
+quantidade_mensagens = int(input("\nInsira quantas mensagens serão enviadas: "))
 
 #Processamento
+driver = webdriver.Chrome(ChromeDriverManager().install())
 inicializadorWebdriver()
 
-if turner == "0":
+if tuner == "0":
     for contato in contatos:
         buscarContato(contato)
         for i in range(quantidade_mensagens):
             enviarMensagem(mensagem)
+else:
+    for contato in contatos:
+        buscarContato(contato)
+        encontraFigurinhas()
+        for i in range(quantidade_mensagens):
+            enviarFigurinha()
