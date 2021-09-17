@@ -81,7 +81,7 @@ def enviarFigurinha():
 print('='*60)
 print(' '*20, 'WHATSAPP BOT 2')
 print('='*60)
-print('\n ~> By: Mateus CohuzEr')
+print('\n ~> By: Mateus "CohuzEr"')
 
 # Entrada
 tuner = lerZeroUm("\nDigite para:\n0-Mensagem de Texto\n1-Figurinha\n>> ") # 1-Manda a figurinha em primeiro lugar nas enviadas recentemente
