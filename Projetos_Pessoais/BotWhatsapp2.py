@@ -5,6 +5,12 @@ from selenium.webdriver.common.keys import Keys
 import urllib
 import urllib.request
 
+#Definição das funções
+def construtorMensagem(turner, mensagem):
+    if turner == "0":
+        retorno = str(input(mensagem))
+    return retorno
+
 
 def lerList(mensagem):
     lista = []
@@ -39,7 +45,7 @@ def inicializadorWebdriver():
         time.sleep(20)
 
 
-def buscar_contato(contato):
+def buscarContato(contato):
         campo_pesquisa = driver.find_element_by_xpath('//div[contains(@class, "copyable-text selectable-text")]')
         #Ambos os Xpath's servem para encontrar as caixas de busca e mensagem do whatsapp
         time.sleep(3)
@@ -48,7 +54,7 @@ def buscar_contato(contato):
         campo_pesquisa.send_keys(Keys.ENTER)
 
 
-def enviar_mensagem(mensagem):
+def enviarMensagem(mensagem):
     campo_mensagem = driver.find_elements_by_xpath('//div[contains(@class, "copyable-text selectable-text")]')
     #campo_mensagem[0] == Buscar contatos; campo_mensagem[1] == escrever a mensagem
     campo_mensagem[1].click()
@@ -57,18 +63,26 @@ def enviar_mensagem(mensagem):
     campo_mensagem[1].send_keys(Keys.ENTER)
 
 
-def enviar_figurinha():
+def enviarFigurinha():
     pass
 
-
+#Código Principal
 print('='*60)
 print(' '*20, 'WHATSAPP BOT 2')
 print('='*60)
 print('\n ~> By: Mateus CohuzEr')
 
-mensagem = str
-turner_sticker = lerZeroUm("\nDigite para:\n0-Mensagem de Texto\n1-Figurinha\n>> ")
+# Entrada
+turner = lerZeroUm("\nDigite para:\n0-Mensagem de Texto\n1-Figurinha\n>> ") # 1-Manda a figurinha em primeiro lugar nas enviadas recentemente
+mensagem = construtorMensagem("0", "Insira a mensagem desejada: ")
 contatos = lerList("Insira o nome exato do contato ou grupo desejado")
-quantidade_mensagens = int(len(contatos))
+quantidade_mensagens = int(input("Insira quantas mensagens serão enviadas: "))
 
+#Processamento
 inicializadorWebdriver()
+
+if turner == "0":
+    for contato in contatos:
+        buscarContato(contato)
+        for i in range(quantidade_mensagens):
+            enviarMensagem(mensagem)
